@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASP - San Andreas State Police</title>
+    <!-- Favicon link pointing to your savrp.png -->
+    <link rel="icon" type="image/png" href="savrp.png">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d0a16;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        header {
+            background-color: rgba(22, 17, 41, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #d63cff;
+            box-shadow: 0 0 15px rgba(214, 60, 255, 0.35);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-area img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid #d63cff;
+            box-shadow: 0 0 8px rgba(214, 60, 255, 0.5);
+        }
+
+        .logo-area h1 {
+            font-size: 24px;
+            color: #d63cff;
+            text-shadow: 0 0 10px rgba(214, 60, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e0aaff;
+            text-shadow: 0 0 8px rgba(214, 60, 255, 0.8);
+        }
+
+        /* Hero Section with 1.png Background */
+        .hero {
+            background: linear-gradient(rgba(13, 10, 22, 0.8), rgba(13, 10, 22, 1)), url('1.png') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        .hero h2 {
+            font-size: 50px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(214, 60, 255, 0.7), 2px 2px 4px rgba(0,0,0,0.8);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: #b1a9c1;
+        }
+
+        /* Accent Badge for Police Branding */
+        .badge {
+            background-color: rgba(214, 60, 255, 0.15);
+            border: 1px solid #d63cff;
+            color: #e0aaff;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            box-shadow: 0 0 10px rgba(214, 60, 255, 0.2);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #d63cff;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 0 15px rgba(214, 60, 255, 0.4);
+            border: 1px solid #e0aaff;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b21eff;
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(214, 60, 255, 0.8);
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Department Info Layout */
+        .about {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .about h3 {
+            font-size: 36px;
+            color: #d63cff;
+            text-shadow: 0 0 10px rgba(214, 60, 255, 0.4);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Section Headings */
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #d63cff;
+            text-shadow: 0 0 10px rgba(214, 60, 255, 0.4);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        /* Division Grid */
+        .divisions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .division-card {
+            background-color: #161129;
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid #d63cff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .division-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(214, 60, 255, 0.3), 0 4px 15px rgba(0,0,0,0.5);
+            border-top-color: #e0aaff;
+        }
+
+        .division-card h4 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #d63cff;
+            text-shadow: 0 0 5px rgba(214, 60, 255, 0.3);
+            text-transform: uppercase;
+        }
+
+        .division-card p {
+            color: #c7c0d7;
+            font-size: 15px;
+        }
+
+        /* Join Requirements Grid */
+        .requirements-container {
+            background-color: #110d21;
+            border: 1px solid rgba(214, 60, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 80px;
+        }
+
+        .req-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .req-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .req-bullet {
+            background-color: #d63cff;
+            color: #0d0a16;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            flex-shrink: 0;
+            box-shadow: 0 0 8px #d63cff;
+        }
+
+        .req-text h5 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .req-text p {
+            color: #b1a9c1;
+            font-size: 14px;
+        }
+
+        /* Application CTA Banner */
+        .cta-banner {
+            text-align: center;
+            background: linear-gradient(135deg, #161129 0%, #20133a 100%);
+            border: 2px solid #d63cff;
+            box-shadow: 0 0 25px rgba(214, 60, 255, 0.25);
+            padding: 50px 20px;
+            border-radius: 8px;
+        }
+
+        .cta-banner h4 {
+            font-size: 28px;
+            color: #e0aaff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(224, 170, 255, 0.4);
+            text-transform: uppercase;
+        }
+
+        .cta-banner p {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            color: #b1a9c1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #06040a;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #1c152e;
+            margin-top: 60px;
+            font-size: 14px;
+            color: #7d7295;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h2 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .req-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="navbar">
+            <div class="logo-area">
+                <img src="savrp.png" alt="SAVRP Logo">
+                <h1>SASP</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#divisions">Divisions</a></li>
+                <li><a href="#requirements">Requirements</a></li>
+                <li><a href="https://discord.gg/bkVpNfwS" target="_blank">Discord</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="badge">State Law Enforcement</div>
+        <h2>San Andreas State Police</h2>
+        <p>To Protect and Serve the Entire San Andreas Valley. Join an elite tactical force dedicated to professional integrity, state highway safety, and structural public protection.</p>
+        <a href="https://discord.gg/bkVpNfwS" target="_blank" class="btn">Apply for SASP</a>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h3>Our Mission</h3>
+            <p style="max-width: 800px; margin: 0 auto; color: #b1a9c1; font-size: 18px; line-height: 1.8;">
+                The mission of the San Andreas State Police is to safeguard lives and property throughout the state. We enforce traffic regulations, combat highway crime, investigate major incidents, and supply strategic tactical support to local municipalities. As the premier law enforcement branch in the Valley, we seek professionals committed to bravery, duty, and community trust.
+            </p>
+        </section>
+
+        <!-- Divisions Section -->
+        <section id="divisions">
+            <h3 class="section-title">Specialized Divisions</h3>
+            <div class="divisions-grid">
+                <div class="division-card">
+                    <h4>State Highway Patrol</h4>
+                    <p>Enforcing safety on state routes and federal freeways. Equipped with high-speed pursuit interceptors and radar packages to ensure traffic flow and general transit security.</p>
+                </div>
+                <div class="division-card">
+                    <h4>Tactical Response (SEU)</h4>
+                    <p>Specialized Enforcement Unit handling high-risk scenarios. Highly trained officers focusing on barricaded suspects, crisis negotiation, and advanced weapons handling.</p>
+                </div>
+                <div class="division-card">
+                    <h4>K-9 & Air Support</h4>
+                    <p>Advanced tactical assets featuring drug-detection/tracking K-9 units and Air Support choppers equipped with high-beam spotlights and thermal camera optics.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Requirements Section -->
+        <section id="requirements" class="requirements-container">
+            <h3 class="section-title" style="margin-bottom: 10px;">Recruitment Requirements</h3>
+            <p style="text-align: center; color: #b1a9c1; max-width: 600px; margin: 0 auto;">Review our basic admission parameters to ensure your application meets division standards.</p>
+            
+            <div class="req-grid">
+                <div class="req-item">
+                    <div class="req-bullet">1</div>
+                    <div class="req-text">
+                        <h5>Age Limit</h5>
+                        <p>Must be at least 16 years of age (exceptions made on highly detailed, stellar applications).</p>
+                    </div>
+                </div>
+                <div class="req-item">
+                    <div class="req-bullet">2</div>
+                    <div class="req-text">
+                        <h5>Quality Hardware</h5>
+                        <p>Must possess a high-quality microphone and functional, active Discord access.</p>
+                    </div>
+                </div>
+                <div class="req-item">
+                    <div class="req-bullet">3</div>
+                    <div class="req-text">
+                        <h5>Clean Record</h5>
+                        <p>A pristine history on SAVRP. No excessive administrative marks or violent bans.</p>
+                    </div>
+                </div>
+                <div class="req-item">
+                    <div class="req-bullet">4</div>
+                    <div class="req-text">
+                        <h5>Commited Roleplay</h5>
+                        <p>Dedication to advanced roleplaying mechanics, high-stakes communication, and chain of command.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recruitment CTA -->
+        <section class="cta-banner">
+            <h4>Ready to Protect the Valley?</h4>
+            <p>Our recruitment cycles open weekly. Connect with high-ranking troopers on Discord to complete your voice interview and initial academy phases.</p>
+            <a href="https://discord.gg/bkVpNfwS" target="_blank" class="btn">Join Our Recruitment Discord</a>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 San Andreas Valley Roleplay - SASP Division. All rights reserved. We are not affiliated with Rockstar Games.</p>
+    </footer>
+
+</body>
+</html>
