@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San Andreas Valley Roleplay</title>
     <!-- Favicon link pointing to your savrp.png -->
-    <link rel="icon" type="image/png" href="savrp.png">
+    <link class="favicon" rel="icon" type="image/png" href="savrp.png">
     
     <style>
         /* Reset and Base Styles */
@@ -109,6 +109,14 @@
             color: #cccccc;
         }
 
+        /* Button Layout Configuration */
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .btn {
             display: inline-block;
             background-color: #d63cff;
@@ -121,12 +129,28 @@
             transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
             box-shadow: 0 0 15px rgba(214, 60, 255, 0.4);
             border: 1px solid #e0aaff;
+            cursor: pointer;
         }
 
         .btn:hover {
             background-color: #b21eff;
             transform: translateY(-3px);
             box-shadow: 0 0 25px rgba(214, 60, 255, 0.8);
+        }
+
+        /* Elegant Outline Variant for SASP */
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #d63cff;
+            color: #d63cff;
+            text-shadow: 0 0 5px rgba(214, 60, 255, 0.5);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(214, 60, 255, 0.1);
+            color: #e0aaff;
+            box-shadow: 0 0 15px rgba(214, 60, 255, 0.4);
         }
 
         /* Main Content Container */
@@ -149,7 +173,7 @@
             margin-bottom: 20px;
         }
 
-        /* Features Section */
+        /* Features Section with Flex Alignment */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -165,6 +189,11 @@
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 280px;
         }
 
         .feature-card:hover {
@@ -178,6 +207,10 @@
             margin-bottom: 15px;
             color: #d63cff;
             text-shadow: 0 0 5px rgba(214, 60, 255, 0.3);
+        }
+
+        .feature-card p {
+            margin-bottom: 20px;
         }
 
         /* Footer */
@@ -202,6 +235,11 @@
             }
             .hero p {
                 font-size: 16px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -228,7 +266,9 @@
     <section id="home" class="hero">
         <h2>San Andreas Valley Roleplay</h2>
         <p>Welcome to the ultimate immersive roleplay experience. Write your own story, join dedicated factions, and live the life you've always wanted in the Valley.</p>
-        <a href="https://discord.gg/bkVpNfwS" target="_blank" class="btn">Join Our Discord</a>
+        <div class="hero-buttons">
+            <a href="https://discord.gg/bkVpNfwS" target="_blank" class="btn">Join Our Discord</a>
+        </div>
     </section>
 
     <!-- Main Content -->
@@ -246,16 +286,25 @@
         <section id="features">
             <div class="features">
                 <div class="feature-card">
-                    <h4>Emergency Services</h4>
-                    <p style="color: #c7c0d7;">Join our highly trained Police Department, Medical Services, or Fire Department with custom vehicles and active dispatch.</p>
+                    <div>
+                        <h4>Emergency Services</h4>
+                        <p style="color: #c7c0d7;">Join our highly trained Police Department, Medical Services, or Fire Department with custom vehicles and active dispatch.</p>
+                    </div>
+                    <a href="sasp.html" class="btn" style="padding: 8px 20px; font-size: 14px; margin-top: auto;">SASP Portal</a>
                 </div>
                 <div class="feature-card">
-                    <h4>Player-Owned Businesses</h4>
-                    <p style="color: #c7c0d7;">From mechanic shops to nightclubs, you can own, manage, and scale your very own business in our dynamic economy.</p>
+                    <div>
+                        <h4>Player-Owned Businesses</h4>
+                        <p style="color: #c7c0d7;">From mechanic shops to nightclubs, you can own, manage, and scale your very own business in our dynamic economy.</p>
+                    </div>
+                    <span style="color: #7d7295; font-size: 14px; font-weight: bold; text-transform: uppercase;">In-Game Feature</span>
                 </div>
                 <div class="feature-card">
-                    <h4>Criminal Underworld</h4>
-                    <p style="color: #c7c0d7;">Engage in complex heists, drug trafficking, territory control, and custom black-market mechanics if you choose the life of crime.</p>
+                    <div>
+                        <h4>Criminal Underworld</h4>
+                        <p style="color: #c7c0d7;">Engage in complex heists, drug trafficking, territory control, and custom black-market mechanics if you choose the life of crime.</p>
+                    </div>
+                    <span style="color: #7d7295; font-size: 14px; font-weight: bold; text-transform: uppercase;">In-Game Feature</span>
                 </div>
             </div>
         </section>
@@ -264,7 +313,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; .</p>
+        <p>&copy; 2026 San Andreas Valley Roleplay. All rights reserved. We are not affiliated with Rockstar Games.</p>
     </footer>
 
 </body>
