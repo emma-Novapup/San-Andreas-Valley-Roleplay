@@ -17,19 +17,20 @@
         }
 
         body {
-            background-color: #121212;
+            background-color: #0d0a16;
             color: #ffffff;
             line-height: 1.6;
         }
 
         /* Navigation */
         header {
-            background-color: rgba(18, 18, 18, 0.95);
+            background-color: rgba(22, 17, 41, 0.95);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid #ff9900;
+            border-bottom: 2px solid #d63cff;
+            box-shadow: 0 0 15px rgba(214, 60, 255, 0.35);
         }
 
         .navbar {
@@ -51,11 +52,15 @@
             width: 40px;
             height: 40px;
             object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid #d63cff;
+            box-shadow: 0 0 8px rgba(214, 60, 255, 0.5);
         }
 
         .logo-area h1 {
             font-size: 24px;
-            color: #ff9900;
+            color: #d63cff;
+            text-shadow: 0 0 10px rgba(214, 60, 255, 0.6);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -70,16 +75,17 @@
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s;
+            transition: color 0.3s, text-shadow 0.3s;
         }
 
         .nav-links a:hover {
-            color: #ff9900;
+            color: #e0aaff;
+            text-shadow: 0 0 8px rgba(214, 60, 255, 0.8);
         }
 
         /* Hero Section with 1.png Background */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(18, 18, 18, 1)), url('1.png') no-repeat center center/cover;
+            background: linear-gradient(rgba(13, 10, 22, 0.75), rgba(13, 10, 22, 1)), url('1.png') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -93,7 +99,7 @@
         .hero h2 {
             font-size: 50px;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            text-shadow: 0 0 15px rgba(214, 60, 255, 0.7), 2px 2px 4px rgba(0,0,0,0.8);
         }
 
         .hero p {
@@ -105,19 +111,22 @@
 
         .btn {
             display: inline-block;
-            background-color: #ff9900;
-            color: #121212;
+            background-color: #d63cff;
+            color: #ffffff;
             padding: 12px 30px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
             text-transform: uppercase;
-            transition: transform 0.2s, background-color 0.2s;
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 0 15px rgba(214, 60, 255, 0.4);
+            border: 1px solid #e0aaff;
         }
 
         .btn:hover {
-            background-color: #e08800;
+            background-color: #b21eff;
             transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(214, 60, 255, 0.8);
         }
 
         /* Main Content Container */
@@ -135,7 +144,8 @@
 
         .about h3 {
             font-size: 36px;
-            color: #ff9900;
+            color: #d63cff;
+            text-shadow: 0 0 10px rgba(214, 60, 255, 0.4);
             margin-bottom: 20px;
         }
 
@@ -148,29 +158,37 @@
         }
 
         .feature-card {
-            background-color: #1e1e1e;
+            background-color: #161129;
             padding: 30px;
             border-radius: 8px;
-            border-top: 4px solid #ff9900;
+            border-top: 4px solid #d63cff;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(214, 60, 255, 0.3), 0 4px 15px rgba(0,0,0,0.5);
+            border-top-color: #e0aaff;
         }
 
         .feature-card h4 {
             font-size: 22px;
             margin-bottom: 15px;
-            color: #ff9900;
+            color: #d63cff;
+            text-shadow: 0 0 5px rgba(214, 60, 255, 0.3);
         }
 
         /* Footer */
         footer {
-            background-color: #0a0a0a;
+            background-color: #06040a;
             text-align: center;
             padding: 30px 20px;
-            border-top: 1px solid #222;
+            border-top: 1px solid #1c152e;
             margin-top: 40px;
             font-size: 14px;
-            color: #777;
+            color: #7d7295;
         }
 
         /* Responsive Design */
@@ -219,7 +237,7 @@
         <!-- About Section -->
         <section id="about" class="about">
             <h3>Welcome to the Valley</h3>
-            <p style="max-width: 800px; margin: 0 auto; color: #aaa; font-size: 18px;">
+            <p style="max-width: 800px; margin: 0 auto; color: #b1a9c1; font-size: 18px;">
                 San Andreas Valley Roleplay is a community-driven server built for players who value high-quality storytelling and immersive gameplay. Whether you want to uphold the law, run an underground empire, or manage a legitimate business, there is a place for you here.
             </p>
         </section>
@@ -229,15 +247,15 @@
             <div class="features">
                 <div class="feature-card">
                     <h4>Emergency Services</h4>
-                    <p>Join our highly trained Police Department, Medical Services, or Fire Department with custom vehicles and active dispatch.</p>
+                    <p style="color: #c7c0d7;">Join our highly trained Police Department, Medical Services, or Fire Department with custom vehicles and active dispatch.</p>
                 </div>
                 <div class="feature-card">
                     <h4>Player-Owned Businesses</h4>
-                    <p>From mechanic shops to nightclubs, you can own, manage, and scale your very own business in our dynamic economy.</p>
+                    <p style="color: #c7c0d7;">From mechanic shops to nightclubs, you can own, manage, and scale your very own business in our dynamic economy.</p>
                 </div>
                 <div class="feature-card">
                     <h4>Criminal Underworld</h4>
-                    <p>Engage in complex heists, drug trafficking, territory control, and custom black-market mechanics if you choose the life of crime.</p>
+                    <p style="color: #c7c0d7;">Engage in complex heists, drug trafficking, territory control, and custom black-market mechanics if you choose the life of crime.</p>
                 </div>
             </div>
         </section>
