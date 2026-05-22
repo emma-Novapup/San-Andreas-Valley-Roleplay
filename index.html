@@ -1,1 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Andreas Valley Roleplay</title>
+    <!-- Favicon link pointing to your savrp.png -->
+    <link rel="icon" type="image/png" href="savrp.png">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #ff9900;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-area img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+        }
+
+        .logo-area h1 {
+            font-size: 24px;
+            color: #ff9900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff9900;
+        }
+
+        /* Hero Section with 1.png Background */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(18, 18, 18, 1)), url('1.png') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        .hero h2 {
+            font-size: 50px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff9900;
+            color: #121212;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #e08800;
+            transform: translateY(-3px);
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* About Section */
+        .about {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .about h3 {
+            font-size: 36px;
+            color: #ff9900;
+            margin-bottom: 20px;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid #ff9900;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .feature-card h4 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #ff9900;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #222;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h2 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="navbar">
+            <div class="logo-area">
+                <img src="savrp.png" alt="SAVRP Logo">
+                <h1>SAVRP</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="https://discord.gg/yourlink" target="_blank">Discord</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>San Andreas Valley Roleplay</h2>
+        <p>Welcome to the ultimate immersive roleplay experience. Write your own story, join dedicated factions, and live the life you've always wanted in the Valley.</p>
+        <a href="https://discord.gg/yourlink" target="_blank" class="btn">Join Our Discord</a>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h3>Welcome to the Valley</h3>
+            <p style="max-width: 800px; margin: 0 auto; color: #aaa; font-size: 18px;">
+                San Andreas Valley Roleplay is a community-driven server built for players who value high-quality storytelling and immersive gameplay. Whether you want to uphold the law, run an underground empire, or manage a legitimate business, there is a place for you here.
+            </p>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features">
+            <div class="features">
+                <div class="feature-card">
+                    <h4>Emergency Services</h4>
+                    <p>Join our highly trained Police Department, Medical Services, or Fire Department with custom vehicles and active dispatch.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Player-Owned Businesses</h4>
+                    <p>From mechanic shops to nightclubs, you can own, manage, and scale your very own business in our dynamic economy.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Criminal Underworld</h4>
+                    <p>Engage in complex heists, drug trafficking, territory control, and custom black-market mechanics if you choose the life of crime.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 San Andreas Valley Roleplay. All rights reserved. We are not affiliated with Rockstar Games.</p>
+    </footer>
+
+</body>
+</html>
